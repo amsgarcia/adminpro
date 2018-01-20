@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { Ng2GraficaComponent } from '../components/ng2-grafica/ng2-grafica.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { Ng2GraficaComponent } from '../components/ng2-grafica/ng2-grafica.compo
         Graficas1Component,
         ProgressComponent,
         IncrementadorComponent,
-        Ng2GraficaComponent
+        Ng2GraficaComponent,
+        AccountSettingsComponent
     ],
     exports: [
         PagesComponent,
