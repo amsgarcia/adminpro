@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { Ng2GraficaComponent } from '../components/ng2-grafica/ng2-grafica.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +23,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         ProgressComponent,
         IncrementadorComponent,
         Ng2GraficaComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromesasComponent,
+        RxjsComponent
     ],
     exports: [
         PagesComponent,
