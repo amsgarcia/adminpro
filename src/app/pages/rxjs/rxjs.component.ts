@@ -71,9 +71,9 @@ export class RxjsComponent implements OnInit, OnDestroy {
 
     }).retry(2)
     .map( (res: any) => {
-    
+
       return res.valor;
-    
+
     }).filter( (res, index) => {
         // console.log('FILTER', res);
 
@@ -86,5 +86,6 @@ export class RxjsComponent implements OnInit, OnDestroy {
           return false;
         }
     });
+  }
 
 }
