@@ -1,32 +1,42 @@
 import { Injectable } from '@angular/core';
+import { UsuarioService } from '../usuario/usuario.service';
 
 @Injectable()
 export class SidebarService {
 
-  menu: any = [
-    {
-      titulo: 'Principal',
-      icono: 'mdi mdi-gauge',
-      submenu: [
-        {titulo: 'Panel de Control', url: '/dashboard'},
-        {titulo: 'Barra de Progreso', url: '/progress'},
-        {titulo: 'Gráficas', url: '/graficas1'},
-        {titulo: 'Promesas', url: '/promesas'},
-        {titulo: 'RxJs', url: '/rxjs'},
+  menu: any = [];
 
-      ]
-    },
-    {
-      titulo: 'Mantenimiento',
-      icono: 'mdi mdi-folder-lock-open',
-      submenu: [
-        {titulo: 'Usuarios', url: '/usuarios'},
-        {titulo: 'Hospitales', url: '/hospitales'},
-        {titulo: 'Médicos', url: '/medicos'}
-      ]
-    }
-  ];
+  // menu: any = [
+  //   {
+  //     titulo: 'Principal',
+  //     icono: 'mdi mdi-gauge',
+  //     submenu: [
+  //       {titulo: 'Panel de Control', url: '/dashboard'},
+  //       {titulo: 'Barra de Progreso', url: '/progress'},
+  //       {titulo: 'Gráficas', url: '/graficas1'},
+  //       {titulo: 'Promesas', url: '/promesas'},
+  //       {titulo: 'RxJs', url: '/rxjs'},
 
-  constructor() { }
+  //     ]
+  //   },
+  //   {
+  //     titulo: 'Mantenimiento',
+  //     icono: 'mdi mdi-folder-lock-open',
+  //     submenu: [
+  //       {titulo: 'Usuarios', url: '/usuarios'},
+  //       {titulo: 'Hospitales', url: '/hospitales'},
+  //       {titulo: 'Médicos', url: '/medicos'}
+  //     ]
+  //   }
+  // ];
+
+  constructor(public _usuarioService: UsuarioService) {
+   }
+
+   cargarMenu() {
+
+    this.menu = this._usuarioService.menu;
+
+   }
 
 }

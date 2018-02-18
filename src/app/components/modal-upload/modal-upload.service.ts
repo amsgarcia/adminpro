@@ -11,7 +11,7 @@ export class ModalUploadService {
   public notificacion = new EventEmitter<any>(); // emitiré el objeto respuesta del servicio de carga de imágenes.
 
   constructor() {
-
+      this.ocultarModal();
    }
 
    ocultarModal() {

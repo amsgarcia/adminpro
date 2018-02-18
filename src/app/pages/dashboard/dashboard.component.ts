@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario/usuario.service';
+import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +9,10 @@ import { UsuarioService } from '../../services/usuario/usuario.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public _usuarioService: UsuarioService) { }
+  constructor(public _usuarioService: UsuarioService, public _modalUploadService: ModalUploadService) { }
 
   ngOnInit() {
+    this._modalUploadService.ocultarModal();
   }
 
 }
