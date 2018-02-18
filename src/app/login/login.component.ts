@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
     this.email = localStorage.getItem('email') || '';
 
-    if (this.email.length > 0) {
+    if (this.email && this.email.length > 0) {
       this.recuerdame = true;
     }
 

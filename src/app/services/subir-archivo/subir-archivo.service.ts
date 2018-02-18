@@ -21,7 +21,6 @@ export class SubirArchivoService {
           if (xhr.status === 200) {
 
            // swal('Imagen actualizada');
-          console.log('Imagen actualizada');
 
             resolve (JSON.parse( xhr.response )) ;
 

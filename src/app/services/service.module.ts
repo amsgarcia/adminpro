@@ -8,10 +8,13 @@ import {
   UsuarioService,
   LoginGuardGuard,
   SubirArchivoService,
-  ModalUploadService
+  ModalUploadService,
+  HospitalService,
+  MedicoService
   } from './service.index';
 
 import { HttpClientModule } from '@angular/common/http';
+import {  } from './hospital.service';
 
 @NgModule({
   imports: [
@@ -25,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     UsuarioService,
     LoginGuardGuard,
     SubirArchivoService,
-    ModalUploadService
+    ModalUploadService,
+    HospitalService,
+    MedicoService
   ],
   declarations: [],
 
