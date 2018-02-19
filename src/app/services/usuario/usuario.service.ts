@@ -5,6 +5,10 @@ import { URL_SERVICIOS } from '../../config/config';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/throw';
+
 
 @Injectable()
 export class UsuarioService {
@@ -19,6 +23,27 @@ export class UsuarioService {
 
   estaLogueado() {
     return ( this.token.length > 0 ? true : false);
+  }
+
+  renovarToken() {
+
+    let url = URL_SERVICIOS + '/login/newtoken';
+    url += '?token=' + this.token;
+
+    return this.http.get( url )
+               .map( (resp: any) => {
+                  this.token = resp.token;
+                  localStorage.setItem('token', this.token);
+                  return true;
+               })
+               .catch( err => {
+
+                  swal('No se puedo renovar token', 'Intente hacer login de nuevo', 'error');
+
+                  this.logout();
+
+                  return Observable.throw( err );
+               });
   }
 
   cargarStorage() {
@@ -147,15 +172,11 @@ export class UsuarioService {
 
 
   cargarUsuarios(desde: number = 0) {
-
     let url = URL_SERVICIOS + '/usuario?desde=' + desde;
-
     return this.http.get(url);
-
   }
 
   buscarUsuarios( termino: string ) {
-
     let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
     return this.http.get( url ).map( (resp: any) => resp.usuarios );
   }

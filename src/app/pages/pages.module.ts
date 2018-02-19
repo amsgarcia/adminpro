@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PagesComponent } from './pages.component';
+// import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -18,7 +18,7 @@ import { PipesModule } from '../pipes/pipes.module';
 import { ProfileComponent } from './profile/profile.component';
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+// import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
@@ -26,7 +26,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
     declarations: [
-        PagesComponent,
+//        PagesComponent,
         DashboardComponent,
         Graficas1Component,
         ProgressComponent,
@@ -37,14 +37,14 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadComponent,
+//        ModalUploadComponent, // solo va a ser usado por el PagesComponent y nunca debió estar por tanto en el pages module
         HospitalesComponent,
         MedicosComponent,
         MedicoComponent,
         BusquedaComponent
     ],
     exports: [
-        PagesComponent,
+//        PagesComponent,
         DashboardComponent,
         Graficas1Component,
         ProgressComponent

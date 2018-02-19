@@ -16,18 +16,13 @@ export class ModalUploadComponent implements OnInit {
   constructor(
       public _subirArchivoService: SubirArchivoService,
       public _modalUploadService: ModalUploadService
-  ) {
-    this.cerrarModal();
-  }
+  ) {  }
 
-  ngOnInit() {
-    this._modalUploadService.ocultarModal();
-  }
+  ngOnInit() { }
 
   cerrarModal() {
     this.imagenASubir = null;
     this.tmpImg = null;
-
     this._modalUploadService.ocultarModal();
   }
 
